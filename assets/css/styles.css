@@ -1,0 +1,602 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+
+/* Variables */
+:root {
+  --font-family: 'Montserrat', sans-serif;
+  --normal-font: 400;
+  --bold-font: 700;
+  --bolder-font: 900;
+  --bg-color: #fcfcfc;
+  --primary-color: #ff9348;
+  --secondary-color: #3616aa;
+  --primary-shadow: #8b8eaf;
+  --secondary-shadow: #a17a69;
+  --bottom-margin: 0.5rem;
+  --bottom-margin-2: 1rem;
+  --line-height: 1.7rem;
+  --transition: 0.3s;
+}
+/* CSS Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-family);
+    font-weight: lighter;
+    background-color: #2a1c4f;
+  }
+  
+ul {
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+/* Variables end */
+/*---------------Header CSS-----------------*/
+#header {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(/assets/images/backgroundcover.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.user-box {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+.user-box img {
+    border-radius: 50%;
+    width: 250px;
+    border: 2px solid #6caed5;
+}
+.user-box h1 {
+    color: #fff;
+    font-weight: bold;
+    margin: 10px;
+}
+.user-box p {
+    color: #fff;
+}
+.scroll-btn {
+    bottom: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border: 2px solid #fff;
+    padding: 10px 10px 20px;
+    border-radius: 30px;
+}
+.scroll-bar span {
+    border: 2px solid #fff;
+    font-size: 10px;
+    border-radius: 30px;
+}
+.scroll-bar {
+    animation: mover 1s infinite alternate;
+}
+@keyframes mover {
+    0%{transform: translateY(0);}
+    100%{transform: translateY(10px);}
+}
+ /* ---------------------------------------- */
+/* To style the navbar and align the content in it, I will be using CSS Flexbox: */
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3.5rem;
+    background-color: var(--bg-color);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  }
+  /* ---------------------------------------- */
+  /* I will also finish up the rest of the navbar styling by making the h1,
+   nav items, and the hamburger menu button look nicer. I'll do this with 
+   some CSS variables initially declared. */
+
+  nav a {
+    color: green;
+    transition: var(--transition);
+  }
+  nav a:hover {
+    color: green;
+    border-bottom: 2px solid var(--secondary-color);
+  }
+  section a:hover {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+  }
+  /* --------------->>>>>>>>>> */
+  .navbar {
+    background-color: #000;
+}
+.navbar-brand img {
+    height: 80px;
+}
+  nav ul {
+    display: flex;
+    gap: 2.9rem;
+  }
+  
+  nav ul li {
+    font-weight: var(--bold-font);
+  }
+
+  /* ---------------------------------------- */
+  /* The hamburger menu bar also needs to be hidden. It has a class of .burger-menu, 
+  so we can set a display of none with it and also make the button look better. */
+  .burger-menu {
+    color: var(--primary-color);
+    font-size: 2rem;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    display: none;
+  }
+/* <!------------- Info Section---------------> */
+.about {
+    padding-top: 100px;
+    padding-bottom: -130px;
+}
+.profile-img {
+    height: 400px;
+}
+
+.skills-bar p {
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+.progress {
+    border-radius: 16px !important;
+    margin-bottom: 10px;
+}
+.progress-bar {
+    border-radius: 16px;
+    background: #000 !important;
+}
+/* ---------------------------------------- */
+
+/* How to Style the Skills Section */
+.skills {
+    max-width: 68.75rem;
+    margin: auto;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+  
+  .skill-header {
+    margin-bottom: 1rem;
+  
+  }
+  
+  .skills-wrapper img {
+    padding: 1.25rem;
+  }
+  
+  .icon {
+    width: 11.875rem;
+    height: 11.25rem;
+  }
+/* ------------------Resume Section----------------- */
+.resume {
+    padding-top: -50px;
+    padding-bottom: 30px;
+    background: #f9f9f9;
+}
+.resume h3 {
+    margin-bottom: 50px;
+}
+.timeline {
+    list-style-type: none;
+    position: relative;
+}
+.timeline::before {
+    content: '';
+    background: #555;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 1;
+}
+.timeline li {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    background: #fff;
+}
+.timeline li h4 {
+    background-color: #000;
+    padding: 5px 0 5px 20px;
+    color: #fff;
+    font-size: 15px;
+}
+.timeline li h4 span {
+    font-weight: bold;
+    color:  #ccc;
+}
+.timeline li:before {
+    content: '';
+    background: #fff;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #000;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+/* ------------------Services----------------- */
+.services {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.services h1 {
+    margin-bottom: 15px;
+}
+.services-box {
+    background: #f9f9f9;
+    padding: 10px;
+    margin-top: 20px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+.services-box .fa {
+   margin: 0 10px;
+    font-size: 20px;
+}
+.services-box span {
+    margin: 3px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.services-box p {
+    font-size: 15px;
+    margin-top: 20px;
+    color: #777;
+}
+.services-box:hover {
+    background-color: #000;
+    color: #777;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 50px;
+    transition: 1s;
+}
+.services-box:hover p {
+    color: #fff;
+}
+/* ------------------Services contact----------------- */
+.contact {
+    padding-top: 50px;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(/assets/images/backgroundcover4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+.contact .row {
+    padding: 30px 0;
+    font-size: 22px;
+}
+.contact .col-md-4 .fa {
+    padding: 10px;
+    font-size: 40px;
+}
+.contact .btn {
+    padding: 10px 25px 10px 25px;
+    margin-top: 5px;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    background: transparent;
+}
+contact .btn:hover {
+    border: 2px solid #000 !important;
+    background: #000 !important;
+    transition: 0.6s;
+}
+.contact .btn .fa {
+    margin-right: 10px;
+}
+.footer {
+    background: #000;
+    height: 50px;
+    margin-top: 50;
+    color: #fff;
+    padding-top: 10px;
+}
+.fa-heart-broken {
+    color: red;
+}
+/* ------------------Social Icons----------------- */
+.social-icons {
+    top: 50%;
+    transform: translateY(-50%);
+    position: sticky;
+    z-index: 1;
+    width: 80px;
+}
+.social-icons ul {
+    padding: initial;
+}
+.social-icons ul li {
+    height: 40px;
+    width: 40px;
+    list-style-type: none;
+    padding-left: 12px;
+    padding-top: 6px;
+    margin-top: 5px;
+    color: #fff;
+    background: #000;
+
+}
+.social-icons ul li:hover {
+    padding-left: 30px;
+    width: 80px;
+    transition: 1s;
+}
+/* How to Style the Social Icons */
+.socials {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1%;
+    bottom: 50%;
+  }
+  
+  .socicon {
+    width: 2rem;
+    height: 2rem;
+  }
+  /* How to Style the Project Section */
+.projects {
+    background-color: var(--bg-color);
+    padding: 32px 0;
+    margin-top: 2rem;
+  }
+  
+/* How to Style the Project Section */
+.projects {
+    background-color: var(--bg-color);
+    padding: 32px 0;
+    margin-top: 2rem;
+  }
+
+  
+  .projects-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* ---------------------------------------- */
+  /* The images now look better, but the project title, project details, and project links 
+  need to be aligned nicely within their individual containers.The whole project section
+   also needs to be pushed to the center. You don’t need Flexbox to do this, though – it 
+   can be done by setting the text align property to the value of center: */
+   .projects-title {
+    text-align: center;
+    margin-bottom: 1rem;
+
+  }
+  
+  .project-container {
+    text-align: center;
+    width: 21.875rem;
+    padding: 1rem;
+  }
+  /* ---------------------------------------- */
+  /* The individual project containers also need to look more distinct. The box-shadow property will be 
+  instrumental here again, so I’m putting them in their individual cards. */
+  .project-container p {
+    padding: 0.4rem;
+  }
+  
+  .project-title {
+    margin-bottom: var(--bottom-margin);
+  }
+  
+  .project-details {
+    margin-bottom: var(--bottom-margin);
+    color: var(--secondary-color);
+  }
+  .project-pic {
+    width: 65%;
+    height: 60%;
+  }
+  .project-link {
+    color: var(--primary-color);
+  }
+  /* Projects section ends */
+
+/* How to Style the Contact Section */
+.contact2 {
+    margin-top: 2rem;
+  }
+  
+  .contact2 h2 {
+    text-align: center;
+    margin-bottom: var(--bottom-margin-2);
+  }
+  
+  .contact-form-container {
+    max-width: 40.75rem;
+    margin: 0 auto;
+    padding: 0.938rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px var(--secondary-shadow);
+  }
+  /* ---------------------------------------- */
+  /* The input fields, textarea, labels and placeholders definitely need some 
+  styling as well to help with alignment and clarity: */
+  .contact-form-container label {
+    line-height: 2.7em;
+    font-weight: var(--bold-font);
+    color: var(--primary-color);
+  }
+  
+  .contact-form-container textarea {
+    min-height: 6.25rem;
+    font-size: 14px;
+  }
+  
+  .contact-form-container .input-field {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    border: 2px outset var(--primary-color);
+    font-size: 0.875rem;
+    outline: none;
+  }
+  /* ---------------------------------------- */
+  /* to select the placeholders for styling, you can use the placeholder 
+  pseudo-class: */
+  .input-field::placeholder {
+    padding: 0.5rem;
+    color: var(--primary-color);
+  }
+  /* ---------------------------------------- */
+  /* In the contact form, the only thing left is to style the button.
+   Buttons are quite easy to style: */
+   .submit-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: var(--bold-font);
+    transition: var(--transition);
+  }
+  /* ---------------------------------------- */
+  /* The hover state is defined in the CSS code snippet below: */
+  .submit-btn:hover {
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+  }
+  /* ---------------------------------------- */
+  /* How to Style the Scroll to Top Icon */
+.scroll-up {
+    position: fixed;
+    right: 0.5%;
+    bottom: 3%;
+    cursor: pointer;
+  }
+  /* ---------------------------------------- */
+  .up-arrow {
+    width: 3rem;
+    height: 3rem;
+  }
+    /* ---------------------------------------- */  /* ---------------------------------------- */
+  /* General (utilities) */
+.icon-card {
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--secondary-shadow);
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .project-card {
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--primary-shadow);
+    padding: 20px;
+    margin: 10px;
+  }
+  /* ---------------------------------------- */
+  /* How to Make Your Portfolio Website Responsive */
+  @media screen and (max-width: 720px) {
+    nav {
+      padding: 1.5rem 1rem;
+    }
+    /*changes reflects on screen with a width of 720px and below*/
+  /* ---------------------------------------- */
+  /* How to Build the Hamburger Menu */
+  nav ul {
+    position: fixed;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    top: 86px;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+    transform: translateX(120%);
+    transition: transform 0.5s ease-in;
+  }
+  nav ul.show {
+    transform: translateX(0);
+  }
+  
+   nav ul li {
+    margin: 8px;
+  }
+  /* ---------------------------------------- */
+  /* The hamburger menu bar remains hidden. So we need to show it by giving it a display of block,
+   setting a class of show to translate on the x-axis to 0 in order to show it, and then toggle 
+   it with JavaScript. */
+   .burger-menu {
+    display: block;
+  }
+  /* How to Make the Hero Section Responsive */
+  .hero {
+    margin-top: -4rem;
+    flex-direction: column;
+    gap: 0;
+  }
+  /* ---------------------------------------- */
+/* How to Make the Skills Section Responsive */
+.icon {
+    width: 5.875rem;
+    height: 5.25rem;
+  }
+  /* ---------------------------------------- */
+  /* How to Make the Projects Section Responsive */
+  .projects-container {
+    flex-direction: column;
+  }
+  .project-container {
+    width: 20.875rem;
+  }
+  /* ---------------------------------------- */
+  /* How to Make the Contact Form Responsive */
+  .contact-form-container {
+    max-width: 23.75rem;
+  }
+  /* ---------------------------------------- */
+  /* How to Make the Website Responsive on Small Phones */
+  @media screen and (max-width: 420px) {
+    .hero img {
+      height: 37.5rem;
+      width: 23rem;
+    }
+    .bio {
+      width: 18.3rem;
+    }
+    .project-container {
+      width: 17.875rem;
+    }
+    .contact-form-container {
+      max-width: 17.75rem;
+    }
+  } 
+  }
